@@ -25,10 +25,10 @@
 .login-visual:before{width:540px;height:540px;right:-165px;bottom:-205px;box-shadow:0 0 0 75px #ffffff08,0 0 0 150px #ffffff06}
 .login-visual:after{width:280px;height:280px;left:-170px;top:115px;box-shadow:0 0 0 55px #ffffff07}
 .login-brand{position:relative;z-index:1;display:flex;align-items:center;gap:13px}
-.login-brand .brand-mark{width:43px;height:43px;background:#ffffff1c;border:1px solid #ffffff32}
+.login-brand .brand-mark{width:43px;height:43px;background:#ffffff1c;border:1px solid #ffffff32;display:grid;place-items:center;padding:0;flex-shrink:0}
 .login-brand .brand-mark .icon{width:27px;height:27px}
 .login-brand strong{font-size:24px;line-height:1;display:block;letter-spacing:-.6px}
-.login-brand span{display:block;font-size:10px;margin-top:5px;color:#d5f2fa}
+.login-brand>div>span{display:block;font-size:10px;margin-top:5px;color:#d5f2fa}
 .login-visual-content{position:relative;z-index:1;margin:auto 0;max-width:570px}
 .login-eyebrow{font-size:10px;font-weight:650;letter-spacing:1.8px;color:#a9e8ef}
 .login-visual h1{font-size:43px;line-height:1.12;letter-spacing:-1.6px;margin:18px 0 20px;max-width:540px}
