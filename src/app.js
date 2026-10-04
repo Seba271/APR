@@ -44,10 +44,10 @@ function wellForm(id){const w=repository.getWells().find(w=>w.id===id);openDrawe
 function aprForm(){openDrawer('Nuevo APR',`<p class="form-intro">Registra un sistema de Agua Potable Rural.</p><form id="apr-form">${field('name','Nombre del APR','','text','placeholder="APR El Manzano"')}<label>Comuna<select name="commune">${['Monte Patria','Combarbalá','Punitaqui','Río Hurtado','Ovalle','Salamanca','Illapel','Los Vilos'].map(c=>`<option>${c}</option>`).join('')}</select></label>${field('manager','Comité / responsable')}<p class="form-help">Luego podrás asociar pozos a este APR.</p></form>`,`<button class="button" data-action="close">Cancelar</button><button class="button primary" form="apr-form" type="submit">Crear APR</button>`);}
 let toastTimer;function toast(message){const el=document.querySelector('#toast');el.textContent=message;el.classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('visible'),4000);}
 window.addEventListener('hashchange',()=>{state.route=location.hash.slice(1)||'dashboard';close();render();window.scrollTo(0,0);});
-document.addEventListener('click',e=>{const el=e.target.closest('button,a,tr[data-well],tr[data-sample],[data-map-well],.overlay');if(!el)return;
+document.addEventListener('click',e=>{const el=e.target.closest('button,a,tr[data-well],tr[data-sample],[data-map-well],[data-map-canvas],.overlay');if(!el)return;
  if(el.dataset.sample){sampleDetail(el.dataset.sample,openDrawer);return;}
  if(el.dataset.alert){moduleClick('alerts',el,{render,openDrawer,close,toast});return;}
- if(hasModule(state.route)&&moduleClick(state.route,el,{render,openDrawer,close,toast}))return;
+ if(hasModule(state.route)&&moduleClick(state.route,el,{render,openDrawer,close,toast,event:e}))return;
  if(state.route==='samples'&&samplesClick(el,{render,openDrawer}))return;
  if(el.dataset.tab){state.tab=el.dataset.tab;render();return;}
  if(el.dataset.page){state.page=Number(el.dataset.page);render();return;}

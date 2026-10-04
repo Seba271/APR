@@ -34,3 +34,24 @@
 .wells-page td:first-child{grid-column:1}.wells-page td:last-child{grid-column:2;grid-row:1;text-align:right}
 }
 @media(max-width:600px){.report-filters{grid-template-columns:repeat(2,minmax(0,1fr))}.report-filters>.button{grid-column:2}}
+
+/* Direct map navigation and compact report actions. */
+.geo-map{cursor:crosshair}
+.map-count{pointer-events:none}
+.map-count span{color:#91a1b2}
+.map-controls{grid-template-columns:repeat(2,36px);gap:3px;padding:5px;border-radius:9px;box-shadow:0 4px 14px #17354c18}
+.map-controls button{height:36px;border-radius:6px;font-size:20px}
+.map-controls button:hover,.map-controls button:focus-visible{background:#eaf5fb;color:var(--blue)}
+.reports-page .page-header{align-items:flex-start}
+.reports-page .header-actions{gap:10px}
+.report-filter-button{min-width:112px}
+.report-filter-button b{display:grid;place-items:center;min-width:19px;height:19px;padding:0 5px;border-radius:10px;background:#e5f2ff;color:#0874cc;font-size:10px}
+.report-filter-button.is-open{border-color:#7fc4ec;background:#edf7ff;color:#0874cc}
+.report-filter-button .filter-chevron{width:12px;height:12px;transition:transform .18s}
+.report-filter-button.is-open .filter-chevron{transform:rotate(180deg)}
+@media(max-width:600px){
+  .reports-page .page-header{align-items:stretch}
+  .reports-page .header-actions{width:100%}
+  .reports-page .header-actions .button{flex:1}
+  .map-count span{display:none}
+}
