@@ -1,12 +1,13 @@
-import {mapPage,mapClick,mapInput,mapChange} from './map.js';
+import {mapPage,mapClick,mapInput,mapChange,mapPointerDown,mapPointerMove,mapPointerUp,mapWheel} from './map.js';
 import {alertsPage,alertsClick,alertsInput,alertsChange,alertsSubmit} from './alerts.js';
 import {reportsPage,reportsClick,reportsChange} from './reports.js';
 import {usersPage,usersClick,usersInput,usersChange,usersSubmit} from './users.js';
 import {settingsPage,settingsSubmit} from './settings.js';
-const modules={map:{page:mapPage,click:mapClick,input:mapInput,change:mapChange},alerts:{page:alertsPage,click:alertsClick,input:alertsInput,change:alertsChange,submit:alertsSubmit},reports:{page:reportsPage,click:reportsClick,change:reportsChange},users:{page:usersPage,click:usersClick,input:usersInput,change:usersChange,submit:usersSubmit},settings:{page:settingsPage,submit:settingsSubmit}};
+const modules={map:{page:mapPage,click:mapClick,input:mapInput,change:mapChange,pointerdown:mapPointerDown,pointermove:mapPointerMove,pointerup:mapPointerUp,wheel:mapWheel},alerts:{page:alertsPage,click:alertsClick,input:alertsInput,change:alertsChange,submit:alertsSubmit},reports:{page:reportsPage,click:reportsClick,change:reportsChange},users:{page:usersPage,click:usersClick,input:usersInput,change:usersChange,submit:usersSubmit},settings:{page:settingsPage,submit:settingsSubmit}};
 export const hasModule=route=>Boolean(modules[route]);
 export const modulePage=route=>modules[route].page();
 export const moduleClick=(route,el,ctx)=>modules[route]?.click?.(el,ctx)||false;
 export const moduleInput=(route,target,render)=>modules[route]?.input?.(target,render);
 export const moduleChange=(route,target,render)=>modules[route]?.change?.(target,render);
 export const moduleSubmit=(route,form,ctx)=>modules[route]?.submit?.(form,ctx)||false;
+export const modulePointer=(route,type,event,ctx)=>modules[route]?.[type]?.(event,ctx)||false;
