@@ -42,7 +42,7 @@ La exportación prepara un Blob CSV UTF-8 compatible con Excel. El navegador int
 - `src/styles.css`: estilos y tokens del Dashboard.
 - `src/modules.css`: distribución interna y adaptación de los nuevos módulos.
 - `assets/reference.png`: fotografía referencial aportada por el usuario y usada en el detalle de pozo.
-- `server.js`: servidor estático local.
+- `dev-server.mjs`: servidor estático local.
 
 ## Verificación realizada
 
@@ -51,5 +51,6 @@ Sintaxis de todos los módulos; relaciones de datos y unicidad de muestras; cons
 ## Revisión documental y bugs
 
 Consultar [ALINEACION_PROYECTO.md](docs/ALINEACION_PROYECTO.md) para ver cómo se aplicaron las ideas de los documentos VIU y la tesis, qué límites se mantuvieron y los bugs corregidos. Ejecutar `npm test` para comprobar consistencia de datos y umbrales. El buscador conserva el campo durante la actualización de resultados, evitando invertir la escritura.
+
 
 
