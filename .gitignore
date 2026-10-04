@@ -1,0 +1,16 @@
+node_modules/
+tmp/
+dist/
+coverage/
+.env
+.env.*
+!.env.example
+*.log
+.codex/
+.agents/
+.DS_Store
+Thumbs.db
+assets/*-preview.jpg
+assets/pozos-apr-*.jpg
+assets/reportes-final.png
+assets/revision-proyecto.png

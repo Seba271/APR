@@ -1,0 +1,12 @@
+{
+  "name": "apr-monitor",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "check": "node --check src/alerts.js && node --check src/app.js && node --check src/components.js && node --check src/data.js && node --check src/map.js && node --check src/module-ui.js && node --check src/modules.js && node --check src/quality.js && node --check src/reports.js && node --check src/samples.js && node --check src/settings.js && node --check src/sorting.js && node --check src/users.js",
+    "test": "node tests/data-regression.mjs"
+  }
+}
